@@ -12,6 +12,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 rayon = "1.7.0"
+regex = "1.9.3"
 
 [dependencies.neon]
 version = "0.10"

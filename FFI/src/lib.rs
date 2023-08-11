@@ -1,5 +1,6 @@
 pub mod solvers;
 use neon::prelude::*;
+use crate::solvers::rayon_js_binding;
 
 fn factorial(mut cx: FunctionContext) -> JsResult<JsNumber> {
     let n = cx.argument::<JsNumber>(0)?.value(&mut cx) as u64;
@@ -15,5 +16,6 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
 fn main(mut cx: ModuleContext) -> NeonResult<()> {
     cx.export_function("hello", hello)?;
     cx.export_function("factorial", factorial)?;
+    cx.export_function("rayon", rayon_js_binding)?;
     Ok(())
 }
