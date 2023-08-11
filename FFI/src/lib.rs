@@ -1,3 +1,4 @@
+pub mod solvers;
 use neon::prelude::*;
 
 fn factorial(mut cx: FunctionContext) -> JsResult<JsNumber> {
