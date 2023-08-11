@@ -17,6 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: cd fibonachi && cargo build --verbose
+      run: cd FFI && cargo build --verbose
     - name: Run tests
-      run: cd fibonachi && cargo test --verbose
+      run: cd FFI && cargo test --verbose

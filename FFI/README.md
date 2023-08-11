@@ -1,10 +1,10 @@
-# casablanca
+# node_bindings
 
 This project was bootstrapped by [create-neon](https://www.npmjs.com/package/create-neon).
 
-## Installing casablanca
+## Installing node_bindings
 
-Installing casablanca requires a [supported version of Node and Rust](https://github.com/neon-bindings/neon#platform-support).
+Installing node_bindings requires a [supported version of Node and Rust](https://github.com/neon-bindings/neon#platform-support).
 
 You can install the project with npm. In the project directory, run:
 
@@ -14,7 +14,7 @@ $ npm install
 
 This fully installs the project, including installing any dependencies and running the build.
 
-## Building casablanca
+## Building node_bindings
 
 If you have already installed the project and only want to run the build, run:
 
@@ -24,9 +24,9 @@ $ npm run build
 
 This command uses the [cargo-cp-artifact](https://github.com/neon-bindings/cargo-cp-artifact) utility to run the Rust build and copy the built library into `./index.node`.
 
-## Exploring casablanca
+## Exploring node_bindings
 
-After building casablanca, you can explore its exports at the Node REPL:
+After building node_bindings, you can explore its exports at the Node REPL:
 
 ```sh
 $ npm install
@@ -70,7 +70,7 @@ Runs the unit tests by calling `cargo test`. You can learn more about [adding te
 The directory structure of this project is:
 
 ```
-casablanca/
+node_bindings/
 ├── Cargo.toml
 ├── README.md
 ├── index.node
