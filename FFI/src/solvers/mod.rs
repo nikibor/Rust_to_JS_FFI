@@ -2,6 +2,7 @@ use neon::prelude::*;
 use crate::solvers::rayon_worker::RayonWorker;
 
 pub mod rayon_worker;
+pub mod parser;
 
 pub fn rayon_js_binding(mut cx: FunctionContext) -> JsResult<JsNumber> {
     let js_array = cx.argument::<JsArray>(0)?.to_vec(&mut cx)?;
