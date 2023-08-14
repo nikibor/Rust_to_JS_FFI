@@ -1,8 +1,8 @@
-use neon::prelude::*;
 use crate::solvers::rayon_worker::RayonWorker;
+use neon::prelude::*;
 
-pub mod rayon_worker;
 pub mod parser;
+pub mod rayon_worker;
 
 pub fn rayon_js_binding(mut cx: FunctionContext) -> JsResult<JsNumber> {
     let js_array = cx.argument::<JsArray>(0)?.to_vec(&mut cx)?;
@@ -15,7 +15,6 @@ pub fn rayon_js_binding(mut cx: FunctionContext) -> JsResult<JsNumber> {
     let result = RayonWorker::sum_of_squares(data);
     Ok(cx.number(result as f64))
 }
-
 
 // fn clean_phone_numbers(mut cx: FunctionContext) -> JsResult<JsArray> {
 //     // regex to accept numbers
