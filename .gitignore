@@ -23,3 +23,5 @@ Cargo.lock
 out
 gen
 !/.fleet/
+venv
+test_configs
