@@ -22,3 +22,6 @@ Cargo.lock
 *.iml
 out
 gen
+!/.fleet/
+venv
+test_configs
