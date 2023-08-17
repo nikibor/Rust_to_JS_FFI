@@ -1,7 +1,6 @@
 pub mod solvers;
-use crate::solvers::{sum_of_squares_rayon, hello, factorial};
+use crate::solvers::{factorial, hello, sum_of_squares_rayon};
 use neon::prelude::*;
-
 
 #[neon::main]
 fn main(mut cx: ModuleContext) -> NeonResult<()> {

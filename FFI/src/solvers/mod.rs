@@ -25,4 +25,3 @@ pub fn factorial(mut cx: FunctionContext) -> JsResult<JsNumber> {
 pub fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
     Ok(cx.string("hello node"))
 }
-

@@ -46,18 +46,18 @@ impl ConfigParser {
 }
 
 #[cfg(test)]
-pub mod tests{
+pub mod tests {
 
     #[test]
-    fn read_config_test(){
+    fn read_config_test() {
         use crate::solvers::parser::ConfigParser;
 
         let path = String::from("test_configs/config_0.json");
-        let parser = ConfigParser{
-            path_dir: path,
-        };
+        let parser = ConfigParser { path_dir: path };
 
-        let config = parser.read_config("../test_configs/config_0.json".to_string()).unwrap();
+        let config = parser
+            .read_config("../test_configs/config_0.json".to_string())
+            .unwrap();
         print!("{config:?}");
         assert!(true)
     }
