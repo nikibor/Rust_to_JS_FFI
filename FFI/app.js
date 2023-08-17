@@ -35,3 +35,11 @@ for (let i = 0; i < 100; i++) {
 }
 end = Date.now();
 console.log('Native - SumOfSquares - Time elapsed = ', end - start);
+
+
+start = Date.now();
+
+nums = addon.read_configs("../test_configs");
+
+end = Date.now();
+console.log('Rust - reading and parsing json configs',nums, 'elapsed', end - start);
