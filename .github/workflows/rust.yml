@@ -16,6 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install Python dependencies
+      run: |
+          python -m pip install --upgrade pip
+          pip install ruff pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run json_generator
+      run: python config_generator.py
     - name: Build
       run: cd FFI && cargo build --verbose
     - name: Run tests
