@@ -10,8 +10,8 @@ impl RayonWorker {
         input.par_iter().map(|&i| i * i).sum()
     }
 
-    pub fn read_configs(dir_path: String) -> anyhow::Result<Vec<String>>{
-        // todo: 
+    pub fn read_configs(dir_path: String) -> anyhow::Result<Vec<String>> {
+        // todo:
         // Read dir_path - get list of files
         // iterative read it in parallel
         // return list of 'name's
@@ -19,14 +19,16 @@ impl RayonWorker {
         let mut path_str = vec![];
         let paths = fs::read_dir(dir_path)?;
         for path in paths {
-             path_str.push(path?.path().to_str().unwrap().to_string());
+            path_str.push(path?.path().to_str().unwrap().to_string());
         }
-        let result = path_str.par_iter().map(|file_path|{
-            // some action
-            unimplemented!()
-        }).collect::<Vec<String>>();
-    
-        
+        let result = path_str
+            .par_iter()
+            .map(|file_path| {
+                // some action
+                unimplemented!()
+            })
+            .collect::<Vec<String>>();
+
         Ok(result)
     }
 }
