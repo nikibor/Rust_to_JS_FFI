@@ -22,15 +22,15 @@ pub struct Cluster {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Config {
     #[serde(rename = "apiVersion")]
-    api_version: String,
+    pub api_version: String,
     #[serde(rename = "kind")]
-    kind: ConfigKind,
+    pub kind: ConfigKind,
     #[serde(rename = "clusters")]
-    clusters: Vec<Cluster>,
+    pub clusters: Vec<Cluster>,
     #[serde(rename = "name")]
-    name: String,
+    pub name: String,
     #[serde(rename = "users")]
-    users: Vec<String>,
+    pub users: Vec<String>,
 }
 
 pub struct ConfigParser {
@@ -38,7 +38,7 @@ pub struct ConfigParser {
 }
 
 impl ConfigParser {
-    pub fn read_config(&self, file_path: String) -> anyhow::Result<Config> {
+    pub fn read_config(&self, file_path: &str) -> anyhow::Result<Config> {
         let data = fs::read_to_string(file_path)?;
         let config: Config = serde_json::from_str(&data)?;
         Ok(config)
@@ -48,17 +48,14 @@ impl ConfigParser {
 #[cfg(test)]
 pub mod tests {
 
+    use crate::solvers::parser::ConfigParser;
     #[test]
     fn read_config_test() {
-        use crate::solvers::parser::ConfigParser;
+        let parser = ConfigParser {
+            path_dir: String::from("../test_configs"),
+        };
+        let config = parser.read_config("../test_configs/config_0.json").unwrap();
 
-        let path = String::from("test_configs/config_0.json");
-        let parser = ConfigParser { path_dir: path };
-
-        let config = parser
-            .read_config("../test_configs/config_0.json".to_string())
-            .unwrap();
-        print!("{config:?}");
-        assert!(true)
+        assert!(!config.name.is_empty())
     }
 }

@@ -25,3 +25,9 @@ pub fn factorial(mut cx: FunctionContext) -> JsResult<JsNumber> {
 pub fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
     Ok(cx.string("hello node"))
 }
+
+pub fn read_json_configs(mut cx: FunctionContext) -> JsResult<JsNumber> {
+    let dir_path = cx.argument::<JsString>(0)?.value(&mut cx) as String;
+    let configs = RayonWorker::read_configs(&dir_path).unwrap();
+    Ok(cx.number(configs.len() as f64))
+}
