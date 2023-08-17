@@ -25,3 +25,4 @@ gen
 !/.fleet/
 venv
 test_configs
+.fleet
