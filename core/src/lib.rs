@@ -1,3 +1,5 @@
+pub mod solvers;
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }

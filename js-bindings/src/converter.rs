@@ -1,9 +1,9 @@
-use crate::solvers::rayon_executor::RayonWorker;
-use neon::prelude::*;
+use core::solvers::rayon_executor::RayonWorker;
+use neon::types::{JsString, JsNumber, JsArray};
+use neon::prelude::FunctionContext;
+use neon::result::JsResult;
+use neon::context::Context;
 
-pub mod parser;
-pub mod rayon_executor;
-pub mod simd_executor;
 
 pub fn sum_of_squares_rayon(mut cx: FunctionContext) -> JsResult<JsNumber> {
     let js_array = cx.argument::<JsArray>(0)?.to_vec(&mut cx)?;
