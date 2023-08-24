@@ -1,3 +1,4 @@
+use casablanca::solvers::rayon_executor::RayonWorker;
 use pyo3::prelude::*;
 use pyo3::types::PyList;
 // use core::solvers::rayon_executor::RayonWorker;
@@ -12,8 +13,12 @@ pub fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
 // asd
 #[pyfunction]
 pub fn factorial(a: Vec<i32>) -> PyResult<String>{
-    // let result = RayonWorker::sum_of_squares(a);
-    // Ok(result.to_string())
-    let x: i32 = a.iter().sum();
-    Ok(x.to_string())
+    let result = RayonWorker::sum_of_squares(a);
+    Ok(result.to_string())
+}
+
+#[pyfunction]
+pub fn read_json_configs(a: String) -> PyResult<usize>{
+    let configs = RayonWorker::read_configs(&a).unwrap();
+    Ok(configs.len())
 }

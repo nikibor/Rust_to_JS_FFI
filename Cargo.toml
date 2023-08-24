@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "core",
+    "casablanca",
     "js-bindings",
     "python-bindings",
 ]

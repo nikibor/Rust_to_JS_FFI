@@ -1,4 +1,4 @@
-use core::solvers::rayon_executor::RayonWorker;
+use casablanca::solvers::rayon_executor::RayonWorker;
 use neon::types::{JsString, JsNumber, JsArray};
 use neon::prelude::FunctionContext;
 use neon::result::JsResult;
