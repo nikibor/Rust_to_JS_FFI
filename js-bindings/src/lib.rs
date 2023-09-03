@@ -1,6 +1,7 @@
-pub mod solvers;
-use crate::solvers::{factorial, hello, sum_of_squares_rayon, read_json_configs};
+pub mod converter;
+use crate::converter::{factorial, hello, read_json_configs, sum_of_squares_rayon};
 use neon::prelude::*;
+
 
 #[neon::main]
 fn main(mut cx: ModuleContext) -> NeonResult<()> {
