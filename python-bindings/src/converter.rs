@@ -1,6 +1,6 @@
 use casablanca::solvers::rayon_executor::RayonWorker;
 use pyo3::prelude::*;
-use pyo3::types::PyList;
+
 // use core::solvers::rayon_executor::RayonWorker;
 
 
